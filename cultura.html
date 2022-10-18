@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <title>Studiu în albastru</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  
+  
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #00416a;
+  }
+  
+
+  /*Container*/
+  .container {
+	padding: 80px 120px;
+  }
+  
+  
+  /*Navbar*/
+  .navbar {
+	margin-bottom: 0;
+	background-color: #00416a;
+	border: 0;
+	font-size: 11px !important;
+	letter-spacing: 4px;
+	opacity: 0.95;
+  }
+  
+  .navbar li a, .navbar .navbar-brand {
+	color: #d5d5d5 !important;
+  }
+  
+  .navbar-nav li a:hover {
+	color: #fff !important;
+  }
+  
+  .navbar-nav li.active a {
+	color: #fff !important;
+	background-color:#29292c !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+	border-color: transparent;
+  }
+  
+  .open .dropdown-toggle {
+	color: #fff ;
+	background-color: #004d7e !important;
+  }
+  
+  .dropdown-menu li a {
+	color: #00416a !important;
+  }
+  
+  .dropdown-menu li a:hover {
+	background-color: #5D8AA8 !important;
+  }
+  
+
+  /*Blue Bgd*/
+  .bg-1 {
+    background-color: #5D8AA8;
+    color: #FFFFFF;
+  }
+  
+  .bg-1 h3 {
+	color: #fff;
+  }
+  
+  .bg-1 p {
+	font-style: italic;
+  }
+  
+
+  /*Buttons*/
+  .btn {
+	padding: 10px 20px;
+	background-color: #00416a;
+	color: #f1f1f1;
+	border-radius: 0;
+	transition: .2s;
+  }
+
+  .btn:hover, .btn:focus {
+	border: 1px solid #00416a;
+	background-color: #fff;
+	color: #00416a;
+  }
+  
+  .hide-me[aria-expanded="true"] {
+	display: none;
+  }
+  
+  
+  /*Black Text*/
+  .black-text button {
+	margin-top: 20px;
+  }
+  
+  .black-text p {
+	color: black;
+  }
+  
+  
+  /*Romanian*/
+  #romanian .glyphicon {
+	color: #5D8AA8;
+	font-size: 40px;
+	margin-bottom: 25px;
+  }
+  
+  
+  /*Languages*/
+  #languages ul li {
+	margin-bottom: 10px;
+  }
+  
+  
+  /*Tabs*/
+  .nav-tabs li a {
+	color: #fff;
+  }
+  
+  #myTab li.active a{
+	background-color: #fff;
+	color: #5D8AA8;
+	border-color: transparent;
+  }
+  
+  .tab-pad {
+	padding-top: 30px;
+  }
+  
+  #asia .glyphicon {
+	color: #fff;
+	font-size: 170px;
+	margin-left: 0px;
+  }
+  
+  
+  /*Carousel*/
+  .height1 {
+	padding-top: 25%;
+  }
+  
+  .height2 {
+	padding-top: 15%;
+  }
+  
+  .height3 {
+	padding-top: 10%;
+  }
+  
+  
+  /*Slide in*/
+  .slideanim {
+	visibility:hidden;
+  }
+  
+  .slide1 {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+  }
+  
+  @keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+  }
+  
+  @-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
+  }
+  
+  
+  /*Footer*/
+  footer {
+	background-color: #00416a;
+	color: #f5f5f5;
+	padding: 32px;
+  }
+
+  footer a {
+	color: #f5f5f5;
+  }
+
+  footer a:hover {
+	color: #777;
+	text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+		.carousel-caption {
+			display: none; 
+		}
+	}
+  
+  </style>
+  
+</head>
+
+
+<body id = "myPage">
+
+
+<!-- Navbar -->
+<nav class = "navbar navbar-default navbar-fixed-top">
+  <div class = "container-fluid">
+  
+    <div class = "navbar-header">
+      <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#myNavbar">
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+      <a class = "navbar-brand" href = "#"> Albastru </a>
+    </div>
+	
+	
+    <div class = "collapse navbar-collapse" id = "myNavbar">
+      <ul class = "nav navbar-nav navbar-right">
+        <li><a href = "atestat.html"> ACASĂ </a></li>
+		<li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "stiinta.html"> ȘTIINȚĂ
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "stiinta.html#optica"> OPTICĂ </a></li>
+            <li><a href = "stiinta.html#sky"> CERUL </a></li>
+            <li><a href = "stiinta.html#ochi"> OCHI </a></li>
+			<li><a href = "stiinta.html#pigmenti"> PIGMENȚI </a></li>
+            <li><a href = "stiinta.html#bio"> BIOLOGIE </a></li>
+          </ul>
+        </li>
+        <li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "istorie.html"> ISTORIE
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "istorie.html#antic"> LUMEA ANTICĂ </a></li>
+            <li><a href = "istorie.html#bizantin"> IMPERIUL BIZANTIN </a></li>
+            <li><a href = "istorie.html#ev"> EVUL MEDIU </a></li>
+			<li><a href = "istorie.html#portelan"> PORȚELAN </a></li>
+            <li><a href = "istorie.html#uniforma"> UNIFROME </a></li>
+            <li><a href = "istorie.html#pictori"> PICTORI IMPRESIONIȘTI </a></li>
+          </ul>
+        </li>
+        <li><a href = "cultura.html"> CULTURĂ </a></li>
+		<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+	
+  </div>
+</nav>
+
+
+<!-- Container (CAROUSEL Section) -->
+<div id = "carousel" class = "container text-center">
+
+	<div id = "myCarousel" class = "carousel slide" data-ride = "carousel">
+	
+		<!-- Indicators -->
+		<ol class = "carousel-indicators">
+			<li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+			<li data-target = "#myCarousel" data-slide-to = "1"></li>
+			<li data-target = "#myCarousel" data-slide-to = "2"></li>
+			<li data-target = "#myCarousel" data-slide-to = "3"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class = "carousel-inner" role = "listbox">
+					  
+			<div class = "item active">
+			
+				<div class = "row">
+				
+					<div class = "col-sm-6">
+					
+						<p class = "height1"> Albastrul poate reprezenta uneori fericirea și optimismul 
+						în melodiile populare, referindu-se de obicei la cerul albastru. </p>
+					
+					</div>
+					
+					<div class = "col-sm-6">
+					
+						<img src = "photos\blue_sky2.jpg" alt = "Cer albastru" style = "height: 300px;">
+					
+					</div>
+				
+				</div>
+					  
+			</div>
+
+
+			<div class = "item">
+			
+				<div class = "row">
+				
+					<div class = "col-sm-6">
+					
+						<p class = "height2"> Albastrul este folosit în mod obișnuit în occident pentru a 
+						simboliza băieții, spre deosebire de roz folosit pentru fete. 
+						La începutul anilor 1900, albastrul era culoarea pentru fete, 
+						deoarece în mod tradițional era culoarea hainelor Fecioarei 
+						Maria în arta occidentală, în timp ce roz era pentru băieți 
+						(întrucât era asemănător cu culoarea roșie, considerată o culoare
+						masculină). </p>  
+					
+					</div>
+					
+					<div class = "col-sm-6">
+					
+						<img src = "photos\babies.jpg" alt = "Papuci bebelusi" style = "height: 300px;">
+					
+					</div>
+				
+				</div>  
+					  
+			</div>
+					
+					
+			<div class = "item">
+			
+				<div class = "row">
+				
+					<div class = "col-sm-6">
+					
+						<p class = "height3"> Bărbații tuaregi din Africa de Nord poartă un turban albastru
+						numit tagelmust, care îi protejează de soarele și de nisip. Este 
+						colorat cu indigo. În loc să folosească colorant, pentru care este 
+						nevoie de apă prețioasă, tagelmust-ul este colorat pisându-l cu 
+						indigo pudră. Culoarea albastră se transferă pe piele, unde este 
+						văzută ca un semn de noblețe și belșug. Vizitatorii timpurii i-au 
+						denumit „Bărbații Albaștri” din Sahara. </p> 
+					
+					</div>
+					
+					<div class = "col-sm-6">
+					
+						<img src = "photos\sahara_men.jpg" alt = "Bărbații tuaregi" style = "height: 300px;">
+					
+					</div>
+				
+				</div>   
+					  
+			</div>
+			
+			
+			<div class = "item">
+			
+				<div class = "row">
+				
+					<div class = "col-sm-6">
+					
+						<p class = "height1"> În cultura hopi din sud-vestul Americii, albastrul simbolizează
+						vestul, care era văzut drept casa morții. Un vis despre o persoană
+						care poartă pene albastre era considerat de rău augur. </p>
+					
+					</div>
+					
+					<div class = "col-sm-6">
+					
+						<img src = "photos\hopi.jpg" alt = "Cultura hopi" style = "height: 300px;">
+					
+					</div>
+				
+				</div>  
+			
+			</div>	
+					
+		</div>
+					
+	</div>
+
+</div>
+
+
+<!-- Container (LANGUAGES Section) -->
+<div id = "languages" class = "bg-1">
+
+	<div class = "container slideanim">
+	
+		<ul>
+			<li><em><strong> În limba engleză </strong>, albastrul reprezintă adesea
+			tristețea, de exemplu, He was feeling blue </em></li>
+			<li><em><strong> În germană </strong>, a fi „albastru” (blau sein) înseamnă 
+			a fi beat. Poate fi,de asemenea, în legătură cu ploaia, care este de obicei 
+			considerată un declanșator al emoțiilor depresive </em></li>
+			<li><em><strong> În limbile germană, suedeză și norvegiană </strong>, se spune 
+			că o persoană naivă privește lumea cu un ochi albastru </em></li>
+		</ul>
+	
+	</div>
+
+</div>
+
+
+<!-- Container (ROMANIAN Section) -->
+<div id = "romanian" class = "container text-center">
+
+	<h3><strong> ÎN LIMBA ROMÂNĂ </strong></h3>
+	
+	<br>
+	
+	<div class = "row slideanim">
+	
+		<div class = "col-sm-4">
+		
+			<div><span class = "glyphicon glyphicon-folder-open"></span></div>
+			<p> Există câteva expresii legate de albastru: „inimă albastră” 
+			(tristețe), „cântec de inimă albastră” (cântec melancolic), „situație
+			albastră” (situație neplăcută, dificilă), „de/cu sânge albastru”
+			definește o persoană de neam nobil </p>
+		
+		</div>
+		
+		<div class = "col-sm-4">
+		
+			<div><span class = "glyphicon glyphicon-heart-empty"></span></div>
+			<p> În poezie, Eminescu utilizează motivul florii albastre iar
+			Nichita Stănescu folosește absurdul în „Frunză verde de albastru/mă
+			doare un cal măiastru” pentru a sparge tiparul logic al gândirii </p>
+		
+		</div>
+		
+		<div class = "col-sm-4">
+		
+			<div><span class = "glyphicon glyphicon-remove-sign"></span></div>
+			<p> Mai rar întâlnite sunt conotațiile negative: sintagma 
+			băieții cu ochi albaștri” face aluzie la ofițerii de Securitate, 
+			iar în informatică, „ecranul albastru” înseamnă o eroare a sistemului 
+			de operare Windows </p>
+		
+		</div>
+	
+	</div>
+
+</div>
+
+
+<!-- Container (ASIA Section) -->
+<div id = "asia" class = "bg-1 text-center">
+
+	<div class = "container">
+
+		<div class = "row slideanim">
+		
+			<div class = "col-sm-6">
+			
+				<span class = "glyphicon glyphicon-globe"></span>
+			
+			</div>
+			
+			<div class = "col-sm-6">
+			
+				<ul class = "nav nav-tabs" id = "myTab">
+					<li class = "active"><a data-toggle = "tab" href = "#china"> China </a></li>
+					<li><a data-toggle = "tab" href = "#turcia"> Turcia și Asia Centrală </a></li>
+					<li><a data-toggle = "tab" href = "#thailanda"> Thailanda </a></li>
+				</ul>
+				
+				<div class = "tab-content tab-pad">
+				
+					<div id = "china" class = "tab-pane fade in active">
+					
+						<p> În China, culoarea albastră este asociată în mod obișnuit cu 
+						tortură, fantome și moarte. Într-o operă tradițională chineză, un
+						personaj cu fața pudrată în albastru este un personaj negativ </p>
+					
+					</div>
+					
+					<div id = "turcia" class = "tab-pane fade">
+					
+						<p> În Turcia și Asia Centrală, albastru este culoarea doliului </p>
+					
+					</div>
+					
+					<div id = "thailanda" class = "tab-pane fade">
+					
+						<p> În Thailanda, albastrul este asociat cu vineri din calendarul
+						solar tailandez. Oricine poate purta vinerea albastru și oricine 
+						se naște vineri poate adopta albastru ca culoare. </p>
+					
+					</div>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+		
+	</div>
+
+</div>
+
+
+<!-- Footer -->
+<footer class = "text-center">
+  <a class = "up-arrow" href = "#myPage" data-toggle = "tooltip" title = "LA ÎNCEPUT">
+    <span class = "glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <br><br>
+</footer>
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
+$(document).ready(function(){
+  $(".navbar .prevent, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide1");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>

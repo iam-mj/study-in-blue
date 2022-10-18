@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <title>Studiu în albastru</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+  
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  
+  
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #111;
+  }
+  
+  
+  /*Navbar*/
+  .navbar {
+	margin-bottom: 0;
+	background-color: #00416a;
+	border: 0;
+	font-size: 11px !important;
+	letter-spacing: 4px;
+	opacity: 0.95;
+  }
+  
+  .navbar li a, .navbar .navbar-brand {
+	color: #d5d5d5 !important;
+  }
+  
+  .navbar-nav li a:hover {
+	color: #fff !important;
+  }
+  
+  .navbar-nav li.active a {
+	color: #fff !important;
+	background-color:#29292c !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+	border-color: transparent;
+  }
+  
+  .open .dropdown-toggle {
+	color: #fff ;
+	background-color: #004d7e !important;
+  }
+  
+  .dropdown-menu li a {
+	color: #00416a !important;
+  }
+  
+  .dropdown-menu li a:hover {
+	background-color: #5D8AA8 !important;
+  }
+  
+  
+  /*Container*/
+  .container {
+	padding: 80px 120px;
+  }
+  
+  
+  /*Carousel*/
+  .carousel-inner img {
+	-webkit-filter: grayscale(90%);
+	filter: grayscale(40%); 
+	width: 100%; 
+	margin: auto;
+  }
+
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  
+  
+  /*Blue Bgd*/
+  .bg-1 {
+    background: #5D8AA8;
+    color: #FFFFFF;
+  }
+  
+  .bg-1 h3 {
+	color: #fff;
+  }
+  
+  .bg-1 p {
+	font-style: italic;
+  }
+  
+  
+  /*Shades Photos*/
+  .thumbnail {
+	padding: 5px 5px 5px 5px;
+	border: none;
+	border-radius: 0;
+  }
+
+  .thumbnail p {
+	margin-top: 15px;
+	color: #1F305E;
+  }
+  
+  
+  /*Buttons*/
+  .btn {
+	padding: 10px 20px;
+	background-color: #00416a;
+	color: #f1f1f1;
+	border-radius: 0;
+	transition: .2s;
+  }
+
+  .btn:hover, .btn:focus {
+	border: 1px solid #00416a;
+	background-color: #fff;
+	color: #00416a;
+  }
+  
+  .hide-me[aria-expanded="true"] {
+	display: none;
+  }
+  
+  
+  /*Contact*/
+  .form-control {
+	border-radius: 0;
+  }
+  
+  textarea {
+	resize: none;
+  }
+  
+  
+  /*Black Text*/
+  .black-text button {
+	margin-top: 20px;
+  }
+  
+  .black-text h3 {
+	color: #00416a;
+  }
+  
+  .black-text p {
+	color: black;
+  }
+  
+  
+  /*Slide in*/
+  .slideanim {
+	visibility: hidden;
+  }
+  
+  .slide1 {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+  }
+  
+  @keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+  }
+  
+  @-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
+  }
+  
+  
+  /*Footer*/
+  footer {
+	background-color: #00416a;
+	color: #f5f5f5;
+	padding: 32px;
+  }
+
+  footer a {
+	color: #f5f5f5;
+  }
+
+  footer a:hover {
+	color: #777;
+	text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+		.carousel-caption {
+			display: none; 
+		}
+	}
+  
+  </style>
+</head>
+
+<body id = "myPage">
+
+<!-- Navbar -->
+<nav class = "navbar navbar-default navbar-fixed-top">
+  <div class = "container-fluid">
+  
+    <div class = "navbar-header">
+      <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#myNavbar">
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+      <a class = "navbar-brand" href = "#"> Albastru </a>
+    </div>
+	
+	
+    <div class = "collapse navbar-collapse" id = "myNavbar">
+      <ul class = "nav navbar-nav navbar-right">
+        <li><a href = "atestat.html"> ACASĂ </a></li>
+		<li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "stiinta.html"> ȘTIINȚĂ
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "stiinta.html#optica"> OPTICĂ </a></li>
+            <li><a href = "stiinta.html#sky"> CERUL </a></li>
+            <li><a href = "stiinta.html#ochi"> OCHI </a></li>
+			<li><a href = "stiinta.html#pigmenti"> PIGMENȚI </a></li>
+            <li><a href = "stiinta.html#bio"> BIOLOGIE </a></li>
+          </ul>
+        </li>
+        <li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "istorie.html"> ISTORIE
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "istorie.html#antic"> LUMEA ANTICĂ </a></li>
+            <li><a href = "istorie.html#bizantin"> IMPERIUL BIZANTIN </a></li>
+            <li><a href = "istorie.html#ev"> EVUL MEDIU </a></li>
+			<li><a href = "istorie.html#portelan"> PORȚELAN </a></li>
+            <li><a href = "istorie.html#uniforma"> UNIFROME </a></li>
+            <li><a href = "istorie.html#pictori"> PICTORI IMPRESIONIȘTI </a></li>
+          </ul>
+        </li>
+        <li><a href = "cultura.html"> CULTURĂ </a></li>
+		<li><a href = "#"><span class = "glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+	
+  </div>
+</nav>
+
+
+<!-- Carousel -->
+<div id = "myCarousel" class = "carousel slide" data-ride = "carousel">
+    <!-- Indicators -->
+    <ol class = "carousel-indicators">
+      <li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+      <li data-target = "#myCarousel" data-slide-to = "1"></li>
+      <li data-target = "#myCarousel" data-slide-to = "2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class = "carousel-inner" role = "listbox">
+      
+	  <div class = "item active">
+        
+		<img src = "photos\blue-sky.png" alt = "Știință și natură" style = "height: 450px;">
+        
+		<div class = "carousel-caption">
+          <h3> Știință și natură </h3>
+          <p> Descoperă adevărul din spatele iluziei! </p>
+        </div>      
+      
+	  </div>
+
+
+      <div class = "item">
+        
+		<img src = "photos\blue-art.jpg" alt = "Istorie" style = "height: 450px;">
+        
+		<div class = "carousel-caption">
+          <h3> Istorie </h3>
+          <p> Află despre evoluția albastrului în pictură, sculptură și modă! </p>
+        </div>      
+      
+	  </div>
+    
+	
+      <div class = "item">
+        
+		<img src = "photos\blue-flag.jpg" alt = "Cultura mondială" style = "height: 450px;">
+        
+		<div class = "carousel-caption">
+          <h3> Cultura mondială </h3>
+          <p> Descoperă implicațiile culorii albastre în mentalitatea globală! </p>
+        </div>      
+      
+	  </div>
+    
+	</div>
+
+    <!-- Left and right controls -->
+    <a class = "left carousel-control" href = "#myCarousel" role = "button" data-slide = "prev">
+      <span class = "glyphicon glyphicon-chevron-left" aria-hidden = "true"></span>
+      <span class = "sr-only">Previous</span>
+    </a>
+    <a class = "right carousel-control" href = "#myCarousel" role = "button" data-slide = "next">
+      <span class = "glyphicon glyphicon-chevron-right" aria-hidden = "true"></span>
+      <span class = "sr-only">Next</span>
+    </a>
+</div>
+
+
+<!-- Container (BLUE Section) -->
+<div class = "container text-center">
+
+  <div class = "black-text">
+  <h3><strong> A L B A S T R U </strong></h3>
+  </div>
+  
+  <div class = "slideanim">
+	  <p> Albastru este una dintre culorile din spectrul vizibil ochiului uman, aflată între violet și verde, 
+	  și clasificată ca o „culoare rece”. În pictură și teoria culorilor precum și în modelul de culori RGB 
+	  este una dintre cele trei culori primare. </p>
+	  <p><em> Albastrul prezintă o adevărată enigmă istorică. </em><p>
+	  <p> A fost puțin apreciat de către culturile antichității; pentru romani, de fapt, reprezenta culoarea 
+	  barbarilor și avea conotații negative. Astăzi, însă, albastrul este de departe culoarea preferată 
+	  a europenilor, popularitatea sa depășind-o cu mult pe cea a verdelui sau a roșului. </p>
+  </div>
+  
+</div>
+
+
+<!-- Container (SHADES Section) -->
+<div id = "shades" class = "bg-1 text-center">
+  <div class = "container">
+    
+	<h3>NUANȚE ȘI TONURI</h3>
+    <p> Variațiunile culorii albastre pot să difere în saturație, intensitate
+	sau luminozitate sau în două sau trei dintre aceste calități.<br> Variațiile de valoare se mai 
+	numesc și nuanțe.</p>
+    
+	
+	<!--First Row-->
+    <div class="row slideanim">
+      <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\72a0c1.png" alt = "Air Super Blue" style = "width:100%; height:100px;">
+			<p><strong>Air Super Blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\0070bb.png" alt = "Azul" style = "width:100%; height:100px;">
+			<p><strong>Azul</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\89cff0.png" alt = "Baby Blue" style = "width:100%; height:100px;">
+			<p><strong>Baby Blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\003262.png" alt = "Berkeley Blue" style = "width:100%; height:100px;">
+			<p><strong>Berkeley Blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\2072af.png" alt = "Bice blue" style = "width:100%; height:100px;">
+			<p><strong>Bice blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\0095b6.png" alt = "Bondi blue" style = "width:100%; height:100px;">
+			<p><strong>Bondi blue</strong></p>
+		</div>
+	  </div>
+    </div>
+	
+	<div class = "text-center">
+		<a class = "btn hide-me" href="#more" data-toggle="collapse">
+				Mai mult 
+		</a>
+	</div>
+	
+	<div id = "more" class = "collapse">
+	
+	<!--Second Row-->
+	<div class="row text-center slideanim">
+      <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\4997d0.png" alt = "Celestial Blue" style = "width:100%; height:100px;">
+			<p><strong>Celestial Blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\007ba7.png" alt = "Cerulean" style = "width:100%; height:100px;">
+			<p><strong>Cerulean</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\0047ab.png" alt = "Cobalt blue" style = "width:100%; height:100px;">
+			<p><strong>Cobalt blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\b9d9eb.png" alt = "Columbia blue" style = "width:100%; height:100px;">
+			<p><strong>Columbia blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\6495ed.png" alt = "Cornflower blue" style = "width:100%; height:100px;">
+			<p><strong>Cornflower blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\1560BD.jpg" alt = "Denim" style = "width:100%; height:100px;">
+			<p><strong>Denim</strong></p>
+		</div>
+	  </div>
+    </div>
+	
+	
+	<!--Third Row-->
+	<div class="row text-center slideanim">
+      <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\1034a6.png" alt = "Egyptian blue" style = "width:100%; height:100px;">
+			<p><strong>Egyptian blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\0072bb.png" alt = "French Blue" style = "width:100%; height:100px;">
+			<p><strong>French Blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\00416a.png" alt = "Indigo dye" style = "width:100%; height:100px;">
+			<p><strong>Indigo dye</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\26619c.png" alt = "Lapis Lazuli" style = "width:100%; height:100px;">
+			<p><strong>Lapis Lazuli</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\add8e6.png" alt = "Light blue" style = "width:100%; height:100px;">
+			<p><strong>Light blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\87cefa.png" alt = "Light Sky Blue" style = "width:100%; height:100px;">
+			<p><strong>Light Sky Blue</strong></p>
+		</div>
+	  </div>
+    </div>
+	
+	
+	<!--Forth Row-->
+	<div class="row text-center slideanim">
+      <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\87d3f8.png" alt = "Pale azure" style = "width:100%; height:100px;">
+			<p><strong>Pale azure</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\45b1e8.png" alt = "Picton Blue" style = "width:100%; height:100px;">
+			<p><strong>Picton Blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\9eb9d4.png" alt = "Powder blue" style = "width:100%; height:100px;">
+			<p><strong>Powder blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\0f52ba.png" alt = "Sapphire" style = "width:100%; height:100px;">
+			<p><strong>Sapphire</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\4682b4.png" alt = "Steel blue" style = "width:100%; height:100px;">
+			<p><strong>Steel blue</strong></p>
+		</div>
+	  </div>
+	  <div class = "col-sm-2">
+		<div class = "thumbnail">
+			<img src = "photos\2774ae.png" alt = "UCLA Blue" style = "width:100%; height:100px;">
+			<p><strong>UCLA Blue</strong></p>
+		</div>
+	  </div>
+    </div>
+	
+	
+	<div class = "text-center">
+		<a class = "btn" href = "#more" data-toggle = "collapse">
+			Mai puțin
+		</a>
+	</div>
+	
+	</div>
+	
+  </div>
+  
+</div>
+
+
+<!-- Container (CONTACT Section) -->
+<div class = "container black-text">
+
+  <h3 class = "text-center"><strong> CONTACT </strong></h3>
+  <p class = "text-center"><em> Lăsați-ne un mesaj! </em></p>
+  
+  <div class = "row test">
+  
+    <div class = "col-md-4">
+      <p> Spune-ne nuanța ta preferată :)) </p>
+      <p><span class = "glyphicon glyphicon-map-marker"></span> Piatra Neamț, RO </p>
+      <p><span class = "glyphicon glyphicon-phone"></span> Telefon: +40 747111333 </p>
+      <p><span class = "glyphicon glyphicon-envelope"></span> Email: albastru@gmail.com </p>
+    </div>
+	
+    <div class = "col-md-8">
+	
+      <div class = "row">
+	  
+        <div class = "col-sm-6 form-group">
+          <input class = "form-control" id = "name" name = "name" placeholder = "Nume" type = "text" required>
+        </div>
+		
+        <div class="col-sm-6 form-group">
+          <input class = "form-control" id = "email" name = "email" placeholder = "Email" type = "email" required>
+        </div>
+		
+      </div>
+	  
+      <textarea class = "form-control" id = "comments" name = "comments" placeholder = "Comentează" rows = "5"></textarea>
+	  
+      <div class = "row">
+	  
+        <div class = "col-md-12 form-group">
+          <button class = "btn pull-right" type = "submit"> Trimite </button>
+        </div>
+		
+      </div>
+	  
+    </div>
+	
+  </div>
+  
+</div>
+
+
+<!-- Footer -->
+<footer class = "text-center">
+  <a class = "up-arrow" href = "#myPage" data-toggle = "tooltip" title = "LA ÎNCEPUT">
+    <span class = "glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <br><br>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+$(document).ready(function(){
+  $(".navbar .prevent, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide1");
+        }
+    });
+  });
+  
+  $('#more').on('hide.bs.collapse', function () {
+    $('html, body').animate({
+       scrollTop: $("#shades").offset().top
+    }, 300);
+  });
+  
+})
+</script>
+
+</body>
+</html>

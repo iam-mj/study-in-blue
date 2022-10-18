@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <title>Studiu în albastru</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  
+  
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #111;
+  }
+  
+
+  /*Container*/
+  .container {
+	padding: 80px 120px;
+  }
+  
+  
+  /*Navbar*/
+  .navbar {
+	margin-bottom: 0;
+	background-color: #00416a;
+	border: 0;
+	font-size: 11px !important;
+	letter-spacing: 4px;
+	opacity: 0.95;
+  }
+  
+  .navbar li a, .navbar .navbar-brand {
+	color: #d5d5d5 !important;
+  }
+  
+  .navbar-nav li a:hover {
+	color: #fff !important;
+  }
+  
+  .navbar-nav li.active a {
+	color: #fff !important;
+	background-color:#29292c !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+	border-color: transparent;
+  }
+  
+  .open .dropdown-toggle {
+	color: #fff ;
+	background-color: #004d7e !important;
+  }
+  
+  .dropdown-menu li a {
+	color: #00416a !important;
+  }
+  
+  .dropdown-menu li a:hover {
+	background-color: #5D8AA8 !important;
+  }
+  
+
+  /*Blue Bgd*/
+  .bg-1 {
+    background-color: #5D8AA8;
+    color: #FFFFFF;
+  }
+  
+  .bg-1 h3 {
+	color: #fff;
+  }
+  
+  .bg-1 p {
+	font-style: italic;
+  }
+  
+
+  /*Buttons*/
+  .btn {
+	padding: 10px 20px;
+	background-color: #00416a;
+	color: #f1f1f1;
+	border-radius: 0;
+	transition: .2s;
+  }
+
+  .btn:hover, .btn:focus {
+	border: 1px solid #00416a;
+	background-color: #fff;
+	color: #00416a;
+  }
+  
+  .hide-me[aria-expanded="true"] {
+	display: none;
+  }
+  
+  
+  /*Black Text*/
+  .black-text button {
+	margin-top: 20px;
+  }
+  
+  .black-text h3 {
+	color: #00416a;
+  }
+  
+  .black-text p {
+	color: black;
+  }
+  
+  
+  /*Grid*/
+  .container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+  
+  .row.row-no-gutter {
+    margin: 0
+  }
+  
+  .row.row-no-gutter [class*="col-"] {
+    padding: 0
+  }
+  
+  .img-full-width {
+    width: 100.5%;
+    height: auto;
+  }
+  
+  #optics {
+	padding: 60px 35px 5px;
+  }
+  
+  #optics_photo {
+	filter: blur(0.7px);
+  }
+  
+  
+  /*Sky Section*/
+  #sky {
+	background-image: url("photos/blue_sky.jpg");
+	background-color: #cccccc;
+	height: 650px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	margin: 0px;
+	width: 100%;
+  }
+  
+  #sky h3 {
+	color: #fff;
+	padding-top: 3%;
+  }
+  
+  #sky p {
+	color: #fff;
+	padding-right: 30%;
+  }
+  
+  #sky button {
+	margin-top: 15px;
+  }
+  
+
+  /*Modal*/
+  .modal-header, h4, .close {
+	background-color: #527d99;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  
+  .modal-body {
+	overflow: hidden;
+	position: relative;
+  }
+  
+  .modal-body-bg {
+	opacity: 0.7;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	weight: 100%;
+  }
+  
+  .modal-body-content {
+	position: relative;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0px 0px 10px #000000, 0px 0px 7px #000000, 0px 0px 5px #000000;
+  }
+  
+  .modal-footer {
+	background-color: #527d99;
+  }
+  
+  .modal-footer button {
+	background-color: #527d99;
+	border-style: none;
+  }
+  
+ 
+  /*Pigments*/
+  .pigment {
+	border: 10px solid transparent;
+	margin-bottom: 25px;
+	width: auto;
+	height: 150px;
+	opacity: 0.7;
+  }
+
+  .pigment:hover {
+	border-color: #7ea2ba;
+  }
+  
+  
+  /*Carousel*/
+  #bio {
+	padding: 80px 0px;
+  }
+  
+  .readjust img{
+	width: 250px;
+  }
+  
+  .carousel-inner img {
+	height: 200px;
+	object-fit: fill;
+	object-position: center;
+	margin: none;
+  }
+
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  
+  
+  /*Slide in*/
+  .slideanim {
+	visibility:hidden;
+  }
+  
+  .slide1 {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+  }
+  
+  @keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+  }
+  @-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
+  }
+  
+  
+  /*Footer*/
+  footer {
+	background-color: #00416a;
+	color: #f5f5f5;
+	padding: 32px;
+  }
+
+  footer a {
+	color: #f5f5f5;
+  }
+
+  footer a:hover {
+	color: #777;
+	text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+		.carousel-caption {
+			display: none; 
+		}
+	}
+  
+  </style>
+</head>
+
+
+<body id = "myPage">
+
+<!-- Navbar -->
+<nav class = "navbar navbar-default navbar-fixed-top">
+  <div class = "container-fluid">
+  
+    <div class = "navbar-header">
+      <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#myNavbar">
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+      <a class = "navbar-brand" href = "#"> Albastru </a>
+    </div>
+	
+	
+    <div class = "collapse navbar-collapse" id = "myNavbar">
+      <ul class = "nav navbar-nav navbar-right">
+        <li><a href = "atestat.html"> ACASĂ </a></li>
+		<li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "stiinta.html"> ȘTIINȚĂ
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "#optica" class = "prevent"> OPTICĂ </a></li>
+            <li><a href = "#sky" class = "prevent"> CERUL </a></li>
+            <li><a href = "#ochi" class = "prevent"> OCHI </a></li>
+			<li><a href = "#pigmenti" class = "prevent"> PIGMENȚI </a></li>
+            <li><a href = "#bio" class = "prevent"> BIOLOGIE </a></li>
+          </ul>
+        </li>
+        <li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "istorie.html"> ISTORIE
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "istorie.html#antic"> LUMEA ANTICĂ </a></li>
+            <li><a href = "istorie.html#bizantin"> IMPERIUL BIZANTIN </a></li>
+            <li><a href = "istorie.html#ev"> EVUL MEDIU </a></li>
+			<li><a href = "istorie.html#portelan"> PORȚELAN </a></li>
+            <li><a href = "istorie.html#uniforma"> UNIFROME </a></li>
+            <li><a href = "istorie.html#pictori"> PICTORI IMPRESIONIȘTI </a></li>
+          </ul>
+        </li>
+        <li><a href = "cultura.html"> CULTURĂ </a></li>
+		<li><a href = "#"><span class = "glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+	
+  </div>
+</nav>
+
+
+<!-- Container (OPTICS Section) -->
+<div id = "optica" class = "container-fluid full-width text-center">
+
+  <div class = "row">
+	
+	<div id = "optics_photo" class = "row-no-gutter col-sm-6">
+			<img src = "photos\optics-photonics-industry.jpg" alt = "Blue Optics" class = "img-full-width">
+	</div>
+	
+	<div id = "optics" class = "col-sm-6">
+		<div class = "black-text">
+			<h3><strong> O P T I C Ă </strong></h3>
+		</div>
+		<p>Ochiul uman percepe albastru atunci când observă lumina care are o lungime
+		de undă dominantă de aproximativ 450-495 nanometri. Albastru cu o frecvență mai 
+		mare și deci cu o lungime de undă mai scurtă arată treptat mai violet, în timp 
+		ce albastru cu o frecvență mai mică și o lungime de undă mai lungă apare treptat 
+		mai verde. Albastrul pur, la mijloc, are o lungime de undă de 470 nanometri.</p>
+		<p>În pictură și teoria culorilor tradiționale, albastrul este una dintre cele 
+		trei culori primare ale pigmenților (roșu, galben, albastru), care pot fi amestecate 
+		pentru a forma o gamă largă de culori. Din Renaștere, pictorii au folosit acest 
+		sistem pentru a-și crea culorile.</p>
+	</div>
+	
+  </div>
+
+</div>
+
+
+<!-- Container (SKY Section) -->
+<div id = "sky" class = "container">
+
+	<h3><strong> DE CE ESTE CERUL ALBASTRU? </strong></h3>
+	<br>
+	
+	<div class = "slideanim">
+	
+		<p> Dintre culorile din spectrul vizibil al luminii, albastrul are o lungime de undă foarte 
+		scurtă, în timp ce roșu are cea mai lungă lungime de undă. Când lumina soarelui ajunge în 
+		atmosfera Pământului este împrăștiată în toate direcțiile de toate gazele și particulele din 
+		aer. Lumina albastră este împrăștiată mai mult decât celelalte culori, deoarece călătorește 
+		în unde mai scurte, mai mici. Acest efect se numește dispersie Rayleigh, după Lordul Rayleigh, 
+		fizicianul britanic care l-a descoperit. Efectul a fost confirmat de Albert Einstein în 1911.</p>
+
+		<p> În apropierea răsăritului și a apusului, cea mai mare parte a luminii pe care o vedem vine 
+		aproape tangentă la suprafața Pământului, astfel încât calea luminii prin atmosferă este atât de 
+		lungă, încât o mare parte din lumina albastră și chiar verde este împrăștiată, permițând luminii 
+		roșii și galbene să treacă direct în ochii noștri. Prin urmare, atunci când privim apusul și 
+		răsăritul, culoarea roșie este mai perceptibilă decât oricare dintre celelalte culori.</p>
+		
+	</div>
+	
+	
+	<button class = "btn" data-toggle="modal" data-target="#myModal">
+		Află mai mult 
+	</button>
+	
+</div>
+
+
+<!-- Modal -->
+<div class = "modal fade" id = "myModal" role = "dialog">
+	<div class = "modal-dialog">
+		
+	<div class = "modal-content">
+		<div class = "modal-header">
+			<button type = "button" class = "close" data-dismiss = "modal"> &times; </button>
+			<h4><span class = "glyphicon glyphicon-send"></span> Dar marea? </h4>
+		</div>
+			
+		<div class = "modal-body">
+		
+			<img
+				class = "modal-body-bg";
+				src = "photos/sea.jpg";
+			>
+			
+			<div class = "modal-body-content">
+				<p> Marea este văzută ca fiind albastră, în general, din același motiv: 
+				apa absoarbe lungimile de undă mai lungi de roșu și reflectă și împrăștie 
+				albastrul, care ajunge la ochiul privitorului. Culoarea mării este 
+				afectată și de culoarea cerului, reflectată de particulele din apă; și 
+				prin alge și viața plantelor în apă, ceea ce o poate face să pară verde; 
+				sau prin sedimente, care o pot face să pară maro. </p>
+			</div>
+			
+		</div>
+      
+		<div class = "modal-footer">
+			<button type = "button" class = "btn btn-danger btn-default pull-left" data-dismiss = "modal">
+			<span class = "glyphicon glyphicon-remove"></span> Cancel
+			</button>
+		</div>
+	</div>
+		
+	</div>
+</div>
+
+
+<!-- Container (EYES Section)-->
+<div id = "ochi" class = "container text-center">
+	
+	<div class = "black-text">
+		<h3><strong> O C H <span style = "letter-spacing: 20px;">I  A</span> L B A Ș T R I </strong></h3>
+	</div>
+	
+	<div class = "slideanim">
+	
+		<p><em> Ochii albaștri nu conțin de fapt nici un pigment albastru. </em></p> 
+		<p> Culoarea ochilor este determinată de doi factori: pigmentarea irisului 
+		ochiului și răspândirea luminii în stroma irisului prin mediul turbid. La 
+		om, pigmentarea irisului variază de la maro deschis la negru. În cazul ochilor 
+		albaștri, stroma (stratul exterior al irisului) nu conține deloc pigment, ci 
+		doar fibre de colagen, care dispersează lumina printr-un mecanism numit 
+		dispersia Tyndall și care creează impresia vizuală a culorii albastre, un
+		efect optic asemănător cu dispersie Rayleigh, care ne face să vedem cerul 
+		ca fiind albastru. </p>
+	
+	</div>
+	
+	<br><br>
+	
+	<div class = "row blue-eye slideanim">
+		<div class = "col-sm-4">
+			<img src = "photos\baby_blue_eye.jpg" alt = "Blue Baby Eye" height = "200px">
+		</div>
+		<div class = "col-sm-4">
+			<img src = "photos\Blue-Eye.jpg" alt = "Blue Female Eye" height = "200px">
+		</div>
+		<div class = "col-sm-4">
+			<img src = "photos\blue-eye3.jpg" alt = "Blue Male Eye" height = "200px">
+		</div>
+	</div>
+	
+</div>
+
+
+<!-- Container (PIGMENTS Section)-->
+<div id = "pigmenti"  class = "bg-1 text-center">
+	<div class = "container">
+
+		<h3> PIGMENȚI ȘI COLORANȚI </h3>
+	
+		<p> Pigmenții albastri au fost obținuți din minerale, în special din lapis lazuli 
+		și azurit. Aceste minerale au fost zdrobite, măcinate în pulbere și apoi amestecate 
+		cu un agent de legare cu uscare rapidă, cum ar fi gălbenușul de ou (vopsea tempera) 
+		sau cu un ulei cu uscare lentă, cum ar fi uleiul de in, pentru vopsirea în ulei. 
+		Pentru a face vitralii albastre se folosește albastru de cobalt pigmentul a fost 
+		amestecat cu sticlă. Alți pigmenți albaștri obținuți din minerale sunt ultramarinul, 
+		albastru cerulean și albastru prusac.</p>
+		<p> Începând cu secolul al XVIII-lea, vopselele albastre naturale au fost în mare 
+		parte înlocuite cu coloranți sintetici.</p>
+		
+		<br>
+		
+		<!-- First Row -->
+		<div class = "row slideanim">
+			
+			<div class = "col-sm-3">
+					
+				<p><strong> Albastru de cobalt </strong></p>
+				<a href = "#albastru_de_cobalt" data-toggle = "collapse">
+					<img src = "photos\Albastru_de_cobalt.jpg" class = "img-circle pigment" alt = "Albastru de cobalt">
+				</a>
+					
+				<div id = "albastru_de_cobalt" class = " collapse">						
+					<p> - cobaltul a fost folosit de secole pentru a colora sticla și ceramica,pentru a face 
+					vitralii albastre în catedrale gotice și porțelan chinezesc începând din dinastia T'ang </p>
+					<p> - albastrul de cobalt este un pigment sintetic realizat în 1799 de către chimistul francez 
+					Louis Jacques Thénard, foarte popular în rândul pictorilor </p>
+				</div>
+				
+			</div>
+  
+			<div class = "col-sm-3">
+				
+				<p><strong> Ultramarin natural </strong></p>
+				<a href = "#ultramarin" data-toggle = "collapse">
+					<img src = "photos\Ultramarin.jpg" class = "img-circle pigment" alt = "Ultramarin natural">
+				</a>
+				
+				<div id = "ultramarin" class = "collapse">
+					<p> - realizat prin măcinarea și purificarea lapis lazuli </p>
+					<p> - cel mai fin pigment albastru disponibil în Evul Mediu și în Renaștere </p>
+					<p> - extrem de scump, iar în arta renascentistă italiană deseori rezervat hainelor Fecioarei Maria </p>
+				</div>
+			
+			</div>
+			
+			<div class = "col-sm-3">
+					
+				<p><strong> Ultramarin sintetic </strong></p>					
+				<a href = "#ultramarin_sintetic" data-toggle = "collapse">
+					<img src = "photos\Ultramarin_sintetic.jpg" class = "img-circle pigment" alt = "Ultramarin sintetic">
+				</a>
+					
+				<div id = "ultramarin_sintetic" class = "collapse">
+					<p> - inventat în 1826, are aceeași compoziție chimică cu ultramarinul natural </p>
+					<p> - mai aprins decât ultramarinul natural, deoarece particulele au dimensiuni mai 
+					mici și mai uniforme și astfel distribuie lumina mai uniform </p>
+				</div>
+				
+			</div>
+			
+			<div class = "col-sm-3">
+				
+				<p><strong> Albastru egiptean </strong></p>
+				<a href = "#albastru_egiptean" data-toggle = "collapse">
+					<img src = "photos\Albastru_egiptean.jpg" class = "img-circle pigment" alt = "Albastru egiptean">
+				</a>
+				
+				<div id = "albastru_egiptean" class = "collapse">
+					<p> - primul pigment artificial creat în mileniul al III-lea î.Hr. în Egiptul Antic 
+					prin măcinarea nisipului, cuprului și natronului, apoi încălzirea acestora </p>
+					<p> - adesea folosit în picturile și obiectele funerare pentru a proteja morții în viața lor de apoi </p>
+				</div>
+			
+			</div>
+			
+		</div>
+		
+		<a class = "btn hide-me" href = "#more" data-toggle = "collapse">
+			Mai mult 
+		</a>
+	
+		<div id = "more" class = "collapse">
+			
+			<!-- Second Row -->
+			<div class = "row slideanim">
+				
+				<div class = "col-sm-3">
+				 
+					<p><strong> Lapis lazuli </strong></p>
+					<a href = "#lapis_lazuli" data-toggle = "collapse">
+						<img src = "photos\Lapis_lazuli.jpg" class = "img-circle pigment" alt = "Lapis lazuli">
+					</a>
+					
+					<div id = "lapis_lazuli" class = "collapse">
+						<p> - exploatat în Afganistan de mai bine de trei mii de ani </p>
+						<p> - folosit pentru bijuterii și ornamente, iar mai târziu măcinat și folosit ca pigment </p>
+					</div>
+			
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<p><strong> Azurit </strong></p>
+					<a href = "#azurit" data-toggle = "collapse">
+						<img src = "photos\Azurit.jpg" class = "img-circle pigment" alt = "Azurit">
+					</a>
+					
+					<div id = "azurit" class = "collapse">
+						<p> - comun în Europa și Asia</p>
+						<p> - produs prin dezagregarea depunerilor de minereu de cupru </p>
+						<p> - măcinat a fost folosit ca pigment din cele mai vechi timpuri </p>
+					</div>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+					
+					<p><strong> Albastru YInMn </strong></p>
+					<a href = "#albastru_YInMn" data-toggle = "collapse">
+						<img src = "photos\Albastru_YInMn.jpg" class = "img-circle pigment" alt = "Albastru YInMn">
+					</a>
+					
+					<div id = "albastru_YInMn" class = "collapse">
+						<p> - pigment albastru anorganic care a fost descoperit accidental în 2009 </p>
+					</div>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<p><strong> Azurit măcinat </strong></p>
+					<a href = "#azurit_macinat" data-toggle = "collapse">
+						<img src = "photos\Azurit_macinat.jpg" class = "img-circle pigment" alt = "Azurit măcinat">
+					</a>
+					
+					<div id = "azurit_macinat" class = "collapse">
+						<p> - adesea folosit în Renaștere ca substitut pentru mult mai scumpul lapis lazuli </p>
+						<p> - se obținea din el un albastru bogat, dar instabil, care putea deveni verde închis în timp </p>
+					</div>
+				
+				</div>
+			
+			</div>
+			
+			
+			<!-- Third Row -->
+			<div class = "row slideanim">
+				
+				<div class = "col-sm-4">
+					
+					<p><strong> Indigo </strong></p>
+					<a href = "#indigo" data-toggle = "collapse">
+						<img src = "photos\Indigo.jpg" class = "img-circle pigment" alt = "Indigo">
+					</a>
+					
+					<div id = "indigo" class = "collapse">
+						<p> - fabricat din Indigofera tinctoria, o plantă comună în Asia și Africa, dar puțin 
+						cunoscută în Europa până în secolul al XV-lea </p>
+					</div>
+				
+				</div>
+				
+				<div class = "col-sm-4">
+					
+					<p><strong> Ftalocianina </strong></p>
+					<a href = "#ftalocianina" data-toggle = "collapse">
+						<img src = "photos\Ftalocianina.jpg" class = "img-circle pigment" alt = "FtalocianinaF">
+					</a>
+					
+					<div id = "ftalocianina" class = "collapse">
+						<p> - un nou albastru sintetic creat în anii 1930 </p>
+						<p> - culoare intensă folosită pe scară largă pentru fabricarea de cerneală albastră, colorant și pigment </p>
+					</div>
+				
+				</div>
+				
+				<div class = "col-sm-4">
+					
+					<p><strong> Cerulean </strong></p>
+					<a href = "#cerulean" data-toggle = "collapse">
+						<img src = "photos\Cerulean.jpg" class = "img-circle pigment" alt = "Cerulean">
+					</a>
+					
+					<div id="cerulean" class="collapse">
+						<p> - creat din cupru și oxid de cobalt și folosit pentru a crea o culoare albastru ca cerul </p>
+						<p> - ca și azuritul, în timp se putea estompa sau deveni verde </p>
+					</div>
+				
+				</div>
+				
+				
+			
+			</div>
+			
+			<a class = "btn" href = "#more" data-toggle = "collapse">
+				Mai puțin
+			</a>
+			
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Container (BIOLOGY Section) -->
+<div id = "bio" class = "container text-center">
+	
+	<div class = "black-text">
+		<h3><strong> B I O L O G I E </strong></h3>
+	</div>
+	
+	<br>
+	
+	<div id = "myCarousel" class = "carousel slide" data-ride = "carousel">
+	   
+	   <!-- Indicators -->
+		<ol class = "carousel-indicators">
+		  <li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+		  <li data-target = "#myCarousel" data-slide-to = "1"></li>
+		  <li data-target = "#myCarousel" data-slide-to = "2"></li>
+		  <li data-target = "#myCarousel" data-slide-to = "3"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class = "carousel-inner" role = "listbox">
+		  
+		  <div class = "item active">
+			
+			<div class = "row">
+				<div class = "col-sm-3">
+					<img src = "photos\Tarsiger rufilatus.jpg" alt = "Tarsiger rufilatus"> 
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Păun asiatic.jpg" alt = "Păun asiatic">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Papagal hyacinth.jpg" alt = "Papagal hyacinth">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Sialia currucoides.jpg" alt = "Sialia currucoides">
+				</div>
+				
+			</div>    
+		  
+		  </div>
+		  
+		  
+		  <div class = "item">
+			
+			<div class = "row readjust">
+				<div class = "col-sm-3"> 
+					<img src = "photos\Copsychus malabaricus.jpg" alt = "Copsychus malabaricus">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Ardea purpurea.jpg" alt = "Ardea purpurea">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Paracanthurus.jpg" alt = "Paracanthurus">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Asteroidea.jpg" alt = "Asteroidea">
+				</div>
+				
+			</div>
+			
+		  </div>
+		  
+		  
+		  <div class = "item">
+			
+			<div class = "row readjust">
+				
+				<div class = "col-sm-3">
+					<img src = "photos\Pseudotrapelus sinaitus.jpg" alt = "Pseudotrapelus sinaitus">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Polyommatus bellargus.jpg" alt = "Polyommatus bellargus">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Bielzia coerulans.jpg" alt = "Bielzia coerulans">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Aurelia labiata.jpg" alt = "Aurelia labiata">
+				</div>
+				
+			</div>    
+		  
+		  </div>
+		  
+		  
+		  <div class = "item">
+			
+			<div class = "row readjust">
+			
+				<div class = "col-sm-3">
+					<img src = "photos\Spirobranchus giganteus.jpg" alt = "Spirobranchus giganteus">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Holacanthus passer.jpg" alt = "Holacanthus passer">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Dragonul albastru.jpg" alt = "Dragonul albastru">
+				</div>
+				<div class = "col-sm-3">
+					<img src = "photos\Austrolestes annulosus.jpg" alt = "Austrolestes annulosus">
+				</div>
+				
+			</div>     
+		  
+		  </div>
+		
+		</div>
+		
+	</div>
+</div>
+
+
+<!-- Footer -->
+<footer class = "text-center">
+  <a class = "up-arrow" href = "#myPage" data-toggle = "tooltip" title = "LA ÎNCEPUT">
+    <span class = "glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <br><br>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
+$(document).ready(function(){
+  $(".navbar .prevent, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide1");
+        }
+    });
+  });
+  
+  $('#more').on('hide.bs.collapse', function () {
+    $('html, body').animate({
+       scrollTop: $("#pigmenti").offset().top
+    }, 300);
+  });
+  
+})
+</script>
+
+</body>
+</html>

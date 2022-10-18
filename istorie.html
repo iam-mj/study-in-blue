@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <title>Studiu în albastru</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  
+  
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #00416a;
+  }
+  
+
+  /*Container*/
+  .container {
+	padding: 80px 120px;
+  }
+  
+  
+  /*Navbar*/
+  .navbar {
+	margin-bottom: 0;
+	background-color: #00416a;
+	border: 0;
+	font-size: 11px !important;
+	letter-spacing: 4px;
+	opacity: 0.95;
+  }
+  
+  .navbar li a, .navbar .navbar-brand {
+	color: #d5d5d5 !important;
+  }
+  
+  .navbar-nav li a:hover {
+	color: #fff !important;
+  }
+  
+  .navbar-nav li.active a {
+	color: #fff !important;
+	background-color:#29292c !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+	border-color: transparent;
+  }
+  
+  .open .dropdown-toggle {
+	color: #fff ;
+	background-color: #004d7e !important;
+  }
+  
+  .dropdown-menu li a {
+	color: #00416a !important;
+  }
+  
+  .dropdown-menu li a:hover {
+	background-color: #5D8AA8 !important;
+  }
+  
+
+  /*Blue Bgd*/
+  .bg-1 {
+    background-color: #5D8AA8;
+    color: #FFFFFF;
+  }
+  
+  .bg-1 h3 {
+	color: #fff;
+  }
+  
+  .bg-1 p {
+	font-style: italic;
+  }
+  
+
+  /*Buttons*/
+  .btn {
+	padding: 10px 20px;
+	background-color: #00416a;
+	color: #f1f1f1;
+	border-radius: 0;
+	transition: .2s;
+  }
+
+  .btn:hover, .btn:focus {
+	border: 1px solid #00416a;
+	background-color: #fff;
+	color: #00416a;
+  }
+  
+  .hide-me[aria-expanded="true"] {
+	display: none;
+  }
+  
+  
+  /*Black Text*/
+  .black-text button {
+	margin-top: 20px;
+  }
+  
+  .black-text p {
+	color: black;
+  }
+  
+  
+  /*Tabs*/
+  .nav-tabs li a {
+	color: #fff;
+	background-color: #5D8AA8;
+  }
+  
+  #myTab li.active a{
+	color: #00416a;
+  }
+  
+  .tab-pad {
+	padding-top: 30px;
+  }
+  
+  
+  /*Bizantin Empire*/
+  .container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+  
+  .row.row-no-gutter {
+    margin: 0
+  }
+  
+  .row.row-no-gutter [class*="col-"] {
+    padding: 0
+  }
+  
+  .img-full-width {
+    width: 100.5%;
+    height: auto;
+  }
+  
+  .row.display-flex {
+	 display: flex;
+	 flex-wrap: wrap;
+  }
+  
+  .row.display-flex > [class*='col-'] {
+	 display: flex;
+	 flex-direction: column;
+  }
+  
+  #empire {
+	background: rgb(208,236,255);
+	background: linear-gradient(0deg, rgba(208,236,255,1) 55%, rgba(190,223,254,1) 82%, rgba(160,202,251,1) 100%);
+	padding-top: 50px;
+	padding-left: 45px;
+	padding-right: 45px;
+	color: #000;
+  }
+  
+  #empire h3{
+	color: #00416a;
+	padding-bottom: 10px;
+  }
+  
+  
+  /*Evul Mediu*/
+  .left-btn {
+	margin-top: 4%;
+  }
+  
+  #ev p {
+	margin-top: 5%;
+  }
+  
+  #ev img {
+	margin-top: 12%;
+  }
+  
+  
+  /*China*/
+  .china {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	width: auto;
+	height: 200px;
+  }
+  
+  
+  /*Painters*/
+  #paint {
+	column-width: 250px;
+    column-gap: 15px;
+    max-width: 100%;
+    margin: 30px auto;
+  }
+  
+  #paint > div{
+    display: inline-block;
+    column-break-inside: avoid;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  #paint > div > div{
+    padding: 1em 1em 1em 1em;
+  }
+  
+  #paint img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  #paint span {
+	color: #00416a;
+  }
+  
+  
+  /*Slide in*/
+  .slideanim {
+	visibility:hidden;
+  }
+  
+  .slide1 {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+  }
+  
+  @keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+  }
+  
+  @-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
+  }
+  
+  
+  /*Footer*/
+  footer {
+	background-color: #00416a;
+	color: #f5f5f5;
+	padding: 32px;
+  }
+
+  footer a {
+	color: #f5f5f5;
+  }
+
+  footer a:hover {
+	color: #777;
+	text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+		.carousel-caption {
+			display: none; 
+		}
+	}
+  
+  </style>
+</head>
+
+
+<body id = "myPage">
+
+
+<!-- Navbar -->
+<nav class = "navbar navbar-default navbar-fixed-top">
+  <div class = "container-fluid">
+  
+    <div class = "navbar-header">
+      <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#myNavbar">
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+      <a class = "navbar-brand" href = "#"> Albastru </a>
+    </div>
+	
+	
+    <div class = "collapse navbar-collapse" id = "myNavbar">
+      <ul class = "nav navbar-nav navbar-right">
+        <li><a href = "atestat.html"> ACASĂ </a></li>
+		<li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "stiinta.html"> ȘTIINȚĂ
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "stiinta.html#optica"> OPTICĂ </a></li>
+            <li><a href = "stiinta.html#sky"> CERUL </a></li>
+            <li><a href = "stiinta.html#ochi"> OCHI </a></li>
+			<li><a href = "stiinta.html#pigmenti"> PIGMENȚI </a></li>
+            <li><a href = "stiinta.html#bio"> BIOLOGIE </a></li>
+          </ul>
+        </li>
+        <li class = "dropdown">
+          <a class = "dropdown-toggle" data-toggle = "dropdown" href = "istorie.html"> ISTORIE
+            <span class = "caret"></span>
+          </a>
+          <ul class = "dropdown-menu">
+            <li><a href = "#antic" class = "prevent"> LUMEA ANTICĂ </a></li>
+            <li><a href = "#bizantin" class = "prevent"> IMPERIUL BIZANTIN </a></li>
+            <li><a href = "#ev" class = "prevent"> EVUL MEDIU </a></li>
+			<li><a href = "#portelan" class = "prevent"> PORȚELAN </a></li>
+            <li><a href = "#uniforma" class = "prevent"> UNIFROME </a></li>
+            <li><a href = "#pictori" class = "prevent"> PICTORI IMPRESIONIȘTI </a></li>
+          </ul>
+        </li>
+        <li><a href = "cultura.html"> CULTURĂ </a></li>
+		<li><a href = "#"><span class = "glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+	
+  </div>
+</nav>
+
+
+<!-- Container (ANCIENT Section) -->
+<div id = "antic" class = "container text-center">
+	
+	<h3><strong> LUMEA ANTICĂ </strong></h3>
+	
+	<br>
+	
+	<ul class = "nav nav-tabs" id = "myTab">
+		<li class = "active"><a data-toggle = "tab" href = "#egipt"> Egiptul Antic </a></li>
+		<li><a data-toggle = "tab" href = "#grecia"> Grecia Antică </a></li>
+		<li><a data-toggle = "tab" href = "#roma"> Roma Antică </a></li>
+	</ul>
+	
+	
+	<div class = "tab-content tab-pad">
+		
+		
+		<div id = "egipt" class = "tab-pane fade in active">
+			
+			<div class = "col-sm-6">
+				
+				<p> În Egipt, albastrul era asociat cu cerul și cu divinitatea. Zeul egiptean Amun își 
+				putea face pielea albastră, astfel încât să poată zbura, invizibil, pe cer. Se credea 
+				că albastrul putea proteja și împotriva răului; mulți oameni din jurul Mediteranei poartă 
+				încă o amuletă albastră, reprezentând ochiul lui Dumnezeu, pentru a-i proteja de nenorociri.
+				Sticla albastră a fost fabricată în Mesopotamia și Egipt încă din 2500 î.Hr., folosind 
+				aceleași ingrediente de cupru ca și pigmentul albastru egiptean. Pentru a obține un albastru 
+				mai profund ei au adăugat și cobalt, același albastru produs în Evul Mediu în vitraliile 
+				catedralelor din Saint-Denis și Chartres. Poarta lui Iștar din vechiul Babilon (604–562 î.Hr.) 
+				a fost decorată cu cărămizi cu smalț albastru folosite ca fundal pentru imagini cu lei, 
+				dragoni și bouri. </p>
+			
+			</div>
+			
+			<div class = "col-sm-6">
+			
+				<div id = "myCarousel" class = "carousel slide" data-ride = "carousel">
+					
+					<!-- Indicators -->
+					<ol class = "carousel-indicators">
+					  <li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+					  <li data-target = "#myCarousel" data-slide-to = "1"></li>
+					  <li data-target = "#myCarousel" data-slide-to = "2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class = "carousel-inner" role = "listbox">
+					  
+					  <div class = "item active">
+						
+						<img src = "photos\pictura_egipteana.jpg" alt = "Pictura Egipteana" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Albastru egiptean într-o pictură funerară (c. 1500 î.Hr.) </p>
+						</div>      
+					  
+					  </div>
+
+
+					  <div class = "item">
+						
+						<img src = "photos\vas_egiptean.jpg" alt = "Vas Egiptean" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Vas de faianță egiptean (c. 1550 și 1450 î.Hr.) </p>
+						</div>      
+					  
+					  </div>
+					
+					
+					  <div class = "item">
+						
+						<img src = "photos\poarta_babilon.jpg" alt = "Poarta Babilon" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Poarta lui Iștar din vechiul Babilon (575 î.Hr.) </p>
+						</div>      
+					  
+					  </div>
+					
+					
+					</div>
+					
+				</div>
+			
+			</div>
+			
+			
+		</div>
+		
+		
+		<div id = "grecia" class = "tab-pane fade">
+		
+			<div class = "col-sm-6">
+			
+				<p> Grecii antici clasificau culorile după cum erau deschise sau întunecate,
+				mai degrabă decât de nuanța lor. Cuvântul grecesc pentru albastru închis, kyaneos,
+				ar putea însemna, de asemenea, verde închis, violet, negru sau maro. Cuvântul 
+				grecesc vechi pentru albastru deschis, glaukos, ar putea însemna, de asemenea,
+				verde deschis, gri sau galben. Grecii au importat colorant indigo din India,
+				numindu-l indikon. Au folosit albastru egiptean în picturile de pe pereții Knossos
+				din Creta (2100 î.Hr.). Albastrul nu a fost una dintre cele patru culori primare 
+				pentru pictura greacă descrisă de Pliniu cel Bătrân (roșu, galben, negru și alb),
+				dar, cu toate acestea, a fost folosit ca o culoare de fundal în spatele friselor
+				de pe templele grecești și pentru a colora bărbile statuilor grecești. </p>
+			
+			</div>
+			
+			<div class = "col-sm-6">
+			
+				<div id = "myCarousel2" class = "carousel slide" data-ride = "carousel">
+					
+					<!-- Indicators -->
+					<ol class = "carousel-indicators">
+					  <li data-target = "#myCarousel2" data-slide-to = "0" class = "active"></li>
+					  <li data-target = "#myCarousel2" data-slide-to = "1"></li>
+					  <li data-target = "#myCarousel2" data-slide-to = "2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class = "carousel-inner" role = "listbox">
+					  
+					  <div class = "item active">
+						
+						<img src = "photos\Knossos.jpg" alt = "Knossos" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Intrarea palatului Knossos </p>
+						</div>      
+					  
+					  </div>
+
+
+					  <div class = "item">
+						
+						<img src = "photos\fresca.jpg" alt = "Fresca" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Fresca "Femei în albastru" </p>
+						</div>      
+					  
+					  </div>
+					
+					
+					  <div class = "item">
+						
+						<img src = "photos\fresca2.jpg" alt = "Fresca Tauri" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Fresca "Săritori peste taur" </p>
+						</div>      
+					  
+					  </div>
+					
+					</div>
+					
+				</div>
+			
+			</div>
+		
+		</div>
+		
+		
+		<div id = "roma" class = "tab-pane fade">
+		
+			<div class = "col-sm-6">
+			
+				<p> Romanii importau de asemenea coloranți indigo, dar albastrul era culoarea
+				îmbrăcămintei clasei muncitoare; nobilii și bogații purtau alb, negru, roșu 
+				sau violet. Albastrul era considerat culoarea doliului și culoarea barbarilor.
+				Iulius Cezar a declarat că celții și germanii și-au vopsit fețele albastre pentru
+				a-i înspăimânta pe dușmani și și-au nuanțat părul când au îmbătrânit. Cu toate 
+				acestea, romanii au folosit pe scară largă albastrul pentru decorare. Potrivit 
+				lui Vitruvius, au făcut un pigment albastru închis din indigo și au importat un 
+				pigment albastru egiptean. Pereții vilelor romane din Pompei aveau fresce cu 
+				cer albastru aprins, iar în magazinele comercianților s-au găsit pigmenți albaștri.
+				Romanii aveau multe cuvinte diferite pentru soiurile de albastru, inclusiv caeruleus,
+				caesius, glaucus, cyaneus, lividus, venetus. </p>
+			
+			</div>
+			
+			<div class = "col-sm-6">
+			
+				<div id = "myCarousel3" class = "carousel slide" data-ride = "carousel">
+					
+					<!-- Indicators -->
+					<ol class = "carousel-indicators">
+					  <li data-target = "#myCarousel3" data-slide-to = "0" class = "active"></li>
+					  <li data-target = "#myCarousel3" data-slide-to = "1"></li>
+					  <li data-target = "#myCarousel3" data-slide-to = "2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class = "carousel-inner" role = "listbox">
+					  
+					  <div class = "item active">
+						
+						<img src = "photos\fresca_romana.jpg" alt = "Fresca Pompeii" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Villa lui P. Fannius Synistor din Boscoreale, 50–40 î.H., frescă </p>
+						</div>      
+					  
+					  </div>
+
+
+					  <div class = "item">
+						
+						<img src = "photos\fresca_romana2.jpg" alt = "Fresca Corabie" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Corabie de război, frescă romană din Pompeii (79 î.H.) </p>
+						</div>      
+					  
+					  </div>
+					
+					
+					  <div class = "item">
+						
+						<img src = "photos\casa_romana.jpg" alt = "Interior Casă Romană" style = "height: 350px;">
+						
+						<div class = "carousel-caption">
+						  <p> Interior casă romană din Pompeii </p>
+						</div>      
+					  
+					  </div>
+					
+					</div>
+					
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+</div>
+
+
+<!-- Container (BINZANTIN EMPIRE Section) -->
+<div id = "bizantin" class = "container-fluid full-width text-center">
+
+	<div class = "row row-no-gutter display-flex">
+	
+		<div class = "col-sm-6">
+		
+			<img src = "photos\HeratFridayMosque2.jpg" alt = "Moscheia Vineri din Herat" class = "img-full-width">
+		
+		</div>
+		
+		
+		<div id = "empire" class = "col-sm-6">
+		
+			<h3><strong> IMPERIUL BIZANTIN </strong></h3>
+			
+			<p> Albastrul închis a fost utilizat pe scară largă în decorarea bisericilor 
+			din Imperiul Bizantin. În arta bizantină, Hristos și Fecioara Maria purtau de 
+			obicei albastru închis sau violet. Albastrul a fost folosit ca culoare de fundal 
+			reprezentând cerul în magnificele mozaicuri care decorau bisericile bizantine.</p>
+			<p>În lumea islamică, albastrul avea o importanță secundară față de verde, despre 
+			care se crede că este culoarea preferată a profetului Mahomed. În anumite momente
+			în Spania maură și în alte părți ale lumii islamice, albastrul era culoarea purtată
+			de creștini și evrei, pentru că numai musulmanii aveau voie să poarte alb și verde.
+			Placile decorative cu albastru închis și turcoaz au fost utilizate pe scară largă 
+			pentru decorarea fațadelor și interioarelor moscheilor și palatelor din Spania până 
+			în Asia Centrală. </p>
+		
+		</div>
+	
+	</div>
+
+</div>
+
+
+<!-- Container (EVUL MEDIU Section) -->
+<div class = "container text-center black-text" id = "ev">
+	
+	<!-- First Row -->
+	<div class = "row">
+		
+		<div class = "col-sm-8">
+			
+			<h3><strong> EVUL MEDIU </strong></h3>
+			
+			<p> În arta și viața Europei din timpul Evul Mediu timpuriu, albastrul a jucat un rol
+			minor. Nobilimea purta roșu sau violet, în timp ce numai săracii purtau îmbrăcăminte
+			albastră, colorată cu coloranți de calitate slabă obținuți din planta Isatis tinctoria.
+			Albastrul nu a jucat nici un rol în costumele bogate ale clerului sau în arhitectura
+			sau decorarea bisericilor. Aceast lucru s-a schimbat dramatic între 1130 și 1140 la Paris,
+			când Abbe Suger a reconstruit Catedrala din Saint-Denis. A instalat vitralii colorate cu
+			cobalt, care, combinate cu lumina din sticlă roșie, a umplut biserica cu o lumină albastră
+			violet. Biserica a devenit minunea lumii creștine, iar culoarea a devenit cunoscută sub
+			numele de „albastru de Saint-Denis”. În anii care au urmat, au fost instalate și alte
+			vitralii albastre mai elegante în alte biserici, inclusiv la Catedrala Chartres și 
+			Sainte-Chapelle din Paris. </p>
+				
+			<a class = "btn hide-me left-btn" href = "#more" data-toggle = "collapse">
+				Mai mult 
+			</a>
+		
+		</div>
+		
+		<div class = "col-sm-4">
+		
+			<img src = "photos\Basilique_Saint-Denis.jpg" alt = "Basilica Saint-Denis" class = "img-full-width">
+		
+		</div>
+		
+		
+		<div id = "more" class = "collapse">
+		
+			<!-- Second Row -->
+			<div class = "row slideanim">
+			
+				<div class = "col-sm-12">
+				
+					<p> Un alt factor important în prestigiul crescut al culorii 
+					albastre în secolul al XII-lea a fost venerarea Fecioarei Maria 
+					și o schimbare a culorilor folosite pentru a-și înfățișa 
+					îmbrăcămintea. În secolele anterioare, hainele ei erau de obicei
+					pictate în negru întunecat, gri, violet, verde închis sau albastru 
+					închis. În secolul al XII-lea, Biserica Romano-Catolică a dictat 
+					ca pictorii din Italia (și în restul Europei, în consecință) să
+					picteze Fecioara Maria cu noul pigment importat din Asia - 
+					ultramarinul. Albastrul a devenit asociat cu sfințenia, smerenia 
+					și virtutea. </p>
+				
+				</div>
+			
+			</div>
+			
+			<!-- Third Row -->
+			<div class = "row slideanim">
+			
+				<div class = "col-sm-3">
+				
+					<img src = "photos\Louis VIII.jpg" alt = "Încoronarea lui Louis VIII" class = "img-full-width">
+				
+				</div>
+				
+				
+				<div class = "col-sm-6">
+				
+					<p> Regele Ludovic al IX-lea al Franței (1214–1270), a devenit primul 
+					rege al Franței care s-a îmbrăcat regulat în albastru. Acest lucru a 
+					fost copiată de alți nobili. Picturile miticului rege Arthur au început 
+					să-l arate îmbrăcat în albastru. Stema regilor Franței a devenit un scut 
+					azuriu sau albastru deschis, presărat cu fleur-de-lis sau crini aurii. 
+					Albastrul a deveni culoarea regală. Odată ce albastrul a devenit
+					culoarea regelui, a devenit și culoarea celor bogați și puternici din 
+					Europa. În Evul Mediu în Franța și într-o oarecare măsură în Italia, 
+					vopsirea pânzei albastre a fost supusă licenței coroanei sau statului. 
+					În Italia, vopsirea albastrului a fost atribuită unei bresle specifice, 
+					tintori di guado, și nu putea fi făcută de nimeni altcineva fără penalități 
+					severe. Purtarea culorii albastre presupunea anumite ranguri și averi. </p>
+				
+				</div>
+				
+				
+				<div class = "col-sm-3">
+					<img src = "photos\Carol cel mare.jpg" alt = "Carol cel Mare" class = "img-full-width">
+				
+				</div>
+			
+			</div>
+			
+			
+			<!-- Forth Row -->
+			<div class = "row slideanim">
+			
+				<div class = "col-sm-8">
+			
+					<p> În afară de ultramarin, alte câteva nuanțe de albastru au fost utilizate 
+					pe scară largă în Evul Mediu și mai târziu în Renaștere. Azuritul, o formă
+					de carbonat de cupru, a fost adesea folosit ca substitut pentru ultramarin. 
+					Acesta era extrasă în Franța, Ungaria, Spania și Germania și s-a obținut un 
+					albastru pal cu o nuanță de verde, ideal pentru vopsirea cerului. Era culoarea
+					preferată de fundal a pictorului german Albrecht Dürer. </p>
+					
+					<a class = "btn left-btn" href = "#more" data-toggle = "collapse">
+						Mai puțin
+					</a>
+					
+				</div>
+				
+				
+				<div class = "col-sm-4">
+				
+					<img src = "photos\Voronet.jpg" alt = "Albastru de Voronet" class = "img-full-width">
+				
+				</div>
+			
+			</div>
+		
+		</div>
+		
+	</div>
+
+</div>
+
+
+<!-- Container (CHINA Section) -->
+<div id = "portelan" class = "bg-1 text-center">
+	
+	<div class = "container">
+
+		<h3> PORȚELAN ALBASTRU ȘI ALB </h3>
+		
+		<p> În jurul secolului al IX-lea, artizanii chinezi au abandonat 
+		culoarea albastră Han pe care o folosiseră de secole și au început să folosească albastru 
+		de cobalt, obținut prin sinterizarea oxidului de cobalt cu alumină, la fabricarea porțelanului 
+		albastru și alb fin. Farfuriile și vasele au fost modelate, uscate, apoi s-a aplicat vopseaua 
+		cu o pensulă, acoperită cu un smalț transparent, apoi au fost arse la o temperatură ridicată. 
+		Începând cu secolul al XIX-lea, acest tip de porțelan a fost exportat în cantitate mare în
+		Europa, unde a inspirat un stil întreg de artă, numit Chinezărie. Curțile europene au încercat 
+		timp de mai mulți ani să imite porțelanul albastru și alb chinezesc, dar au reușit abia în secolul
+		al XVIII-lea, după ce un misionar a adus secretul din China. </p>
+		
+		
+		<!-- First Row -->
+		<div class = "row">
+		
+			<div class = "col-sm-3">
+			
+				<img src = "photos\Chinese.jpg" alt = "Porțelan chinezesc" class = "china">
+				<p><strong> Porțelan chinezesc în stilul dinastiei Ming timpurii </strong></p>
+			
+			</div>
+			
+			<div class = "col-sm-3">
+			
+				<img src = "photos\Farfurie de portelan chinezeasca.jpg" alt = "Farfurie de portelan chinezeasca" class = "china">
+				<p><strong> Porțelan chinezesc pictat cu albastru de cobalt </strong></p>
+			
+			</div>
+			
+			<div class = "col-sm-3">
+			
+				<img src = "photos\vas chinezesc.jpg" alt = "Vas chinezesc de porțelan" class = "china">
+				<p><strong> Porțelan chinezesc pictat cu albastru de cobalt, începutul sec. XVI </strong></p>
+			
+			</div>
+			
+			<div class = "col-sm-3">
+			
+				<img src = "photos\vas chinezesc 2.jpg" alt = "Vas chinezesc de porțelan 2" class = "china">
+				<p><strong> Porțelan chinezesc, sf. sec XVII-începutul sec. XVIII </strong></p>
+			
+			</div>
+		
+		</div>
+		
+		<a class = "btn hide-me" href = "#galery" data-toggle = "collapse">
+			Vezi Galeria
+		</a>
+		
+		<!-- Second Row -->
+		<div id = "galery" class = "collapse slideanim">
+		
+			<div class = "row">
+			
+				<div class = "col-sm-3">
+			
+					<img src = "photos\Ceramica albastra si alba.jpg" alt = "Ceramică albastră și albă" class = "china">
+					<p><strong> Ceramică albastră și albă din secolul al XVIII-lea, Delft, Olanda. </strong></p>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<img src = "photos\ceainic japonez.jpeg" alt = "Ceainic japonez" class = "china">
+					<p><strong> Ceainic japonez </strong></p>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<img src = "photos\Vase dinastia Yuan.jpg" alt = "Vase dinastia Yuan" class = "china">
+					<p><strong> Vase dinastia Yuan </strong></p>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<img src = "photos\farfurie japoneaza.jpeg" alt = "Farfurie japoneză" class = "china">
+					<p><strong> Farfurie japoneză cu peisaj colorat în albastru </strong></p>
+				
+				</div>
+			
+			</div>
+			
+			
+			<!-- Third Row -->
+			<div class = "row slideanim">
+			
+				<div class = "col-sm-3">
+			
+					<img src = "photos\Farfurie coreana cu nori si cocori.jpg" alt = "Farfurie coreană" class = "china">
+					<p><strong> Farfurie coreană cu nori și cocori </strong></p>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<img src = "photos\vas corean.jpg" alt = "Vas corean" class = "china">
+					<p><strong> Vas corean de la mijlocul sec. XV </strong></p>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<img src = "photos\octombrie.jpg" alt = "Vase reprezentând lunile anului" class = "china">
+					<p><strong> Farfurie de porțelan dintr-un set de 12 reprezentând lunile anului. Aici octombrie. </strong></p>
+				
+				</div>
+				
+				<div class = "col-sm-3">
+				
+					<img src = "photos\vas.jpg" alt = "Vas, înainte de 1330" class = "china">
+					<p><strong> Vas, înainte de 1330u </strong></p>
+				
+				</div>
+			
+			</div>
+			
+			<a class = "btn left-btn" href = "#galery" data-toggle = "collapse">
+					Închide Galeria
+			</a>
+		
+		</div>
+	
+	</div>
+
+</div>
+
+
+<!-- Container (UNIFORM Section) -->
+<div id = "uniforma" class = "container text-center">
+	
+	<h3><strong> UNIFORMA ALBASTRĂ </strong></h3>
+	
+	<br>
+	
+	<div class = "row">
+	
+		<div class = "col-sm-8">
+			
+			<p> În secolul al XVII-lea, Frederic Wilhelm, Elector de Brandenburg a
+			fost unul dintre primii conducători care a ales pentru armata sa uniforma
+			albastră. Motivele au fost economice; statele germane încercau să-și
+			protejeze industria de coloranți pastel împotriva concurenței colorantului
+			indigo importat. </p>
+			<p> În America,în 1778, Congresul i-a cerut președintelui George Washington să proiecteze
+			o nouă uniformă, iar în anul următor președintele a declarat albastru și ocru
+			drept culorile oficiale ale tuturor uniformelor. Albastrul a continuat să fie 
+			culoarea uniformei de teren a armatei americane până în 1902 și este încă 
+			culoarea uniformei femeilor din cadrul armatei. </p>
+			<p> În Franța, după căderea Bastiliei, s-a format o nouă forță armată, Garde 
+			Nationale, sub comanda marchizului de La Fayette, care a servit cu George Washington 
+			în America. La Fayette a ales uniforme albastru închis, similare cu cele ale armatei 
+			continentale. Albastrul a devenit culoarea armatelor revoluționare, opunându-se uniformelor albe ale 
+			regiștilor și austriecilor. </p>
+			<p> Albastrul a fost culoarea libertății și a revoluției în secolul al XVIII-lea,
+			dar în secolul al XIX-lea a devenit din ce în ce mai mult culoarea autorității 
+			guvernamentale, culoarea uniformă a polițiștilor și a altor funcționari publici.
+			Era considerat serios și autoritar, fără a fi amenințător </p>
+		
+		</div>
+		
+		<div class = "col-sm-4">
+		
+			<div id = "myCarousel_Uniform" class = "carousel slide" data-ride = "carousel">
+					
+					<!-- Indicators -->
+					<ol class = "carousel-indicators">
+					  <li data-target = "#myCarousel_Uniform" data-slide-to = "0" class = "active"></li>
+					  <li data-target = "#myCarousel_Uniform" data-slide-to = "1"></li>
+					  <li data-target = "#myCarousel_Uniform" data-slide-to = "2"></li>
+					  <li data-target = "#myCarousel_Uniform" data-slide-to = "3"></li>
+					  <li data-target = "#myCarousel_Uniform" data-slide-to = "4"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class = "carousel-inner" role = "listbox">
+					  
+					  <div class = "item active">
+						
+						<img src = "photos\Franz_Rudolf_Frisching.jpg" alt = "Franz Rudolf Frisching" style = "height: 450px;">    
+					  
+					  </div>
+
+
+					  <div class = "item">
+						
+						<img src = "photos\Marquis_de_Lafayette.jpg" alt = "Marquis de Lafayette" style = "height: 450px;">
+					  
+					  </div>
+					
+					
+					  <div class = "item">
+						
+						<img src = "photos\Infantaria_da_Corte.jpg" alt = "Infantaria da Corte" style = "height: 450px;">  
+					  
+					  </div>
+					  
+					  <div class = "item">
+						
+						<img src = "photos\Friedrich_II.jpg" alt = "Friedrich II" style = "height: 450px;">  
+					  
+					  </div>
+					  
+					  <div class = "item">
+						
+						<img src = "photos\uniforms.jpg" alt = "Uniforme ungare" style = "height: 450px;">  
+					  
+					  </div>
+					
+					</div>
+					
+					
+				</div>
+		
+		</div>
+	
+	</div>
+
+</div>
+
+
+<!-- Container (PAINTERS Section) -->
+<div id = "pictori" class = "bg-1 text-center">
+
+	<div class = "container">
+	
+		<h3><strong> PICTORI IMPRESIONIȘTI </strong></h3>
+		
+		<br>
+	
+		<div id = "paint">
+			
+			<div>
+				<img src = "photos\Pissarro_-_portrait-of-jeanne-rachel-minette.jpg" alt = "Portret al Jeanne Rachel Minette">
+				<div>
+					<span> <em> Portret al Jeanne Rachel Minette </em> de Camille Pissarro </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Claude_Monet,_Impression,_soleil_levant.jpg" alt = "Impression, soleil levant">
+				<div>
+					<span> <em> Impression, soleil levant </em> de Claude Monet, 1872 </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Paul_Cézanne_-_Mont_Sainte-Victoire.jpg" alt = "Muntele Sainte-Victoire">
+				<div>
+					<span> <em> Muntele Sainte-Victoire </em> (1887), în care muntele este reliefat prin tonuri de albastru </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Monet_Water_Lilies.jpg" alt = "Lacul cu nuferi">
+				<div>
+					<span> <em> Lacul cu nuferi </em> de Claude Monet, 1916 </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Starry_Night_Over_the_Rhone.jpg" alt = "Noapte înstelată">
+				<div>
+					<span> <em> Noapte înstelată peste Rhône </em> a lui Van Gogh (1888) </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Pierre-Auguste_Renoir,_Le_Moulin_de_la_Galette.jpg" alt = "Dance at Le Moulin">
+				<div>
+					<span> <em> Dance at Le Moulin </em> de la Galette de Pierre-Auguste Renoir, 1876 </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Pierre-Auguste_Renoir.jpg" alt = "La Parisienne">
+				<div>
+					<span> <em> La Parisienne </em> de Pierre-Auguste Renoir, 1874 </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Pierre-Auguste_Renoir,_The_Umbrellas.jpg" alt = "Umbrele">
+				<div>
+					<span> <em> Umbrele </em>, de Pierre Auguste-Renoir </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Pierre-Auguste_Renoir_-_Two_Sisters_(On_the_Terrace).jpg" alt = "Pe terasă">
+				<div>
+					<span> <em> Pe terasă </em> de Auguste Renoir, 1881 </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\Pissarro_-_peasants-harvesting-potatoes.jpg" alt = "Țărani recoltând cartofi">
+				<div>
+					<span> <em> Țărani recoltând cartofi </em> de Camille Pissarro </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\La_Gare_Saint-Lazare_-_Claude_Monet.jpg" alt = "Gare Saint-Lazare">
+				<div>
+					<span> Claude Monet a folosit câteva culori inventate recent în <em> Gare Saint-Lazare </em> (1877) </span>
+				</div>
+			</div>
+			
+			<div>
+				<img src = "photos\vincent-van-gogh-starry-night.jpg" alt = "Starry night">
+				<div>
+					<span> <em> Noapte înstelată</em>, Van Gogh </span>
+				</div>
+			</div>
+		
+		</div>
+	
+	</div>
+	
+</div>
+
+
+<!-- Footer -->
+<footer class = "text-center">
+  <a class = "up-arrow" href = "#myPage" data-toggle = "tooltip" title = "LA ÎNCEPUT">
+    <span class = "glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <br><br>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+})
+
+$(document).ready(function(){
+  $(".navbar .prevent, footer a[href='#myPage'], a .upp").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide1");
+        }
+    });
+  });
+  
+  $('#portelan').on('hide.bs.collapse', function () {
+    $('html, body').animate({
+       scrollTop: $("#portelan").offset().top
+    }, 300);
+  });
+  
+  $('#more').on('hide.bs.collapse', function () {
+    $('html, body').animate({
+       scrollTop: $("#ev").offset().top
+    }, 200);
+  });
+  
+})
+</script>
+
+</body>
+</html>
